@@ -157,7 +157,7 @@ What's in this module ?
 .. |Build status| image:: https://travis-ci.org/newslynx/newslynx-sc-google-analytics.svg
    :target: https://travis-ci.org/newslynx/newslynx-sc-google-analytics
 .. |Documentation Status| image:: https://readthedocs.org/projects/newslynx-sc-google-analytics/badge/?version=latest
-   :target: https://readthedocs.org/projects/newslynx-sc-google-analytics/?badge=latest
+   :target: http://newslynx-sc-google-analytics.readthedocs.org/
 
 Contents
 --------

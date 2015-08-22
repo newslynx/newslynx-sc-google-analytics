@@ -1,4 +1,4 @@
-[![Build status](https://travis-ci.org/newslynx/newslynx-sc-google-analytics.svg)](https://travis-ci.org/newslynx/newslynx-sc-google-analytics) [![Documentation Status](https://readthedocs.org/projects/newslynx-sc-google-analytics/badge/?version=latest)](https://readthedocs.org/projects/newslynx-sc-google-analytics/?badge=latest)
+[![Build status](https://travis-ci.org/newslynx/newslynx-sc-google-analytics.svg)](https://travis-ci.org/newslynx/newslynx-sc-google-analytics) [![Documentation Status](https://readthedocs.org/projects/newslynx-sc-google-analytics/badge/?version=latest)](http://newslynx-sc-google-analytics.readthedocs.org/)
 
 newslynx-sc-google-analytics
 ==========================================================================================
