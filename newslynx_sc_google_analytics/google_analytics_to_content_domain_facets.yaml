@@ -2,7 +2,7 @@ slug: google-analytics-to-content-domain-facets
 name: Google Analytics Domain Facets For Content Items
 description: >
     Creates faceted metrics for pageviews by referrer for content items.
-runs: newslynx.sc.metrics.google_analytics.ContentDomainFacets
+runs: newslynx_sc_google_analytics.ContentDomainFacets
 creates: metrics
 option_order: []
 options:
