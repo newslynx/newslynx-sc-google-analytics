@@ -4,7 +4,7 @@ newslynx-sc-google-analytics
 ============================
 
 This module contains all Sous Chefs which deal with Twitter via
-\`twython\`.
+``twython``.
 
 Installation
 ------------
