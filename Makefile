@@ -1,3 +1,10 @@
+all:
+	
+	make clean
+	make install 
+	make all_tests 
+	make all_docs
+	
 
 clean:
 
