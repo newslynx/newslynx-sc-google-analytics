@@ -3,7 +3,6 @@ Sous Chefs
 -------------
 **newslynx-sc-google-analytics** provides access to the following Sous Chefs
 
-RUNS newslynx_sc_google_analytics.ContentDeviceSummaries
 Google Analytics Pageviews by Device Type for content Items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -157,7 +156,6 @@ Metrics
 
 
 
-RUNS newslynx_sc_google_analytics.ContentDomainFacets
 Google Analytics Domain Facets For Content Items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -298,7 +296,6 @@ Metrics
 
 
 
-RUNS newslynx_sc_google_analytics.ContentTimeseries
 Google Analytics Timeseries For Content Items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
