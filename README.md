@@ -1,9 +1,9 @@
-[![Build status](https://travis-ci.org/newslynx/newslynx-sc-google-analytics.svg)](https://travis-ci.org/newslynx/newslynx-sc-google-analytics) [![Documentation Status](https://readthedocs.org/projects/newslynx-sc-google-analytics/badge/?version=latest)](http://newslynx-sc-google-analytics.readthedocs.org/)
+[![Build status](https://travis-ci.org/newslynx/newslynx-sc-google-analytics.svg)](https://travis-ci.org/newslynx/newslynx-sc-google-analytics) [![Documentation Status](https://readthedocs.org/projects/newslynx-sc-google-analytics/badge/?version=latest)](https://readthedocs.org/projects/newslynx-sc-google-analytics/?badge=latest)
 
 newslynx-sc-google-analytics
 ==========================================================================================
 
-This module contains all Sous Chefs which deal with Twitter via `twython`.
+
 
 ## Installation
 
@@ -22,7 +22,7 @@ Requires `nose`
 $ nosetests
 ```
 
-## Documenation
+## Documentation
 
 Documentation for `newslynx-sc-google-analytics` is hosted on [Read The Docs](http://newslynx-sc-google-analytics.readthedocs.org/).
 
@@ -30,7 +30,7 @@ It's generated via the following steps
 
 * converts this file (`README.md`) into a ReStructured Text file, saving it to [docs/index.rst](https://github.com/newslynx/newslynx-sc-google-analytics/blob/master/docs/index.rst)
 * runs `newslynx sc-docs newslynx_sc_google_analytics -f rst` to generate documentation for all the Sous Chefs in `newslynx-sc-google-analytics` and saves the output to [docs/sous-chefs.rst](https://github.com/newslynx/newslynx-sc-google-analytics/blob/master/docs/sous-chefs.rst)
-* Builds Sphinx Documentaiton from these files.
+* Builds Sphinx Documentation from these files.
 
 
 ## Continuous Integration
@@ -58,7 +58,7 @@ See the [contributing guidelines](https://github.com/newslynx/newslynx-sc-google
 	* See the docs on this [here](https://docs.python.org/2/distutils/sourcedist.html#specifying-the-files-to-distribute).
 
 - [setup.py](https://github.com/newslynx/newslynx-sc-google-analytics/blob/master/setup.py)
-	* Specification's for building `newslynx-sc-google-analytics`'s PyPI dsitribution.
+	* Specification's for building `newslynx-sc-google-analytics`'s PyPI distribution.
 
 - [.travis.yml](https://github.com/newslynx/newslynx-sc-google-analytics/blob/master/.travis.yml)
 	* Configurations for Travis Continuous Integration

@@ -46,7 +46,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'newslynx-sc-google-analytics'
-copyright = u'2015, Brian Abelson'
+copyright = u'2015, Merlynne'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -201,12 +201,12 @@ htmlhelp_basename = 'newslynx-sc-google-analyticsdoc'
 #     #'preamble': '',
 # }
 
-# # Grouping the document tree into LaTeX files. List of tuples
-# # (source start file, target name, title,
-# #  author, documentclass [howto, manual, or own class]).
+# Grouping the document tree into LaTeX files. List of tuples
+# (source start file, target name, title,
+#  author, documentclass [howto, manual, or own class]).
 # latex_documents = [
 #     ('index', 'newslynx-sc-google-analytics.tex', u'newslynx-sc-google-analytics Documentation',
-#      u'Brian Abelson', 'manual'),
+#      u'Merlynne', 'manual'),
 # ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -236,7 +236,7 @@ htmlhelp_basename = 'newslynx-sc-google-analyticsdoc'
 # (source start file, name, description, authors, manual section).
 # man_pages = [
 #     ('index', 'newslynx-sc-google-analytics', u'newslynx-sc-google-analytics Documentation',
-#      [u'Brian Abelson'], 1)
+#      [u'Merlynne'], 1)
 # ]
 
 # If true, show URL addresses after external links.
@@ -250,7 +250,7 @@ htmlhelp_basename = 'newslynx-sc-google-analyticsdoc'
 #  dir menu entry, description, category)
 # texinfo_documents = [
 #     ('index', 'newslynx-sc-google-analytics', u'newslynx-sc-google-analytics Documentation',
-#      u'Brian Abelson', 'newslynx-sc-google-analytics', 'This module contains all Sous Chefs which deal with Twitter via \`twython\`.',
+#      u'Merlynne', 'newslynx-sc-google-analytics', '',
 #      'Miscellaneous'),
 # ]
 
