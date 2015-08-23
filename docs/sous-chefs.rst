@@ -11,23 +11,6 @@ Google Analytics Pageviews by Device Type for content Items
    ``newslynx_sc_google_analytics.ContentDeviceSummaries``.
 -  API Slug: ``google-analytics-to-content-device-summaries``
 
-Development
-^^^^^^^^^^^
-
-Pass runtime options to ``google-analytics-to-content-device-summaries``
-and stream output. **NOTE** Will not execute the SousChef's ``load``
-method.
-
-.. code:: bash
-
-    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_device_summaries.yaml option=value1
-
-Alternatively pass in a recipe file
-
-.. code:: bash
-
-    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_device_summaries.yaml --recipe=recipe.yaml
-
 API Usage
 ^^^^^^^^^
 
@@ -63,6 +46,23 @@ method.
 .. code:: bash
 
     $ newslynx api recipes cook id=<id> --passthrough **options
+
+Development
+^^^^^^^^^^^
+
+Pass runtime options to ``google-analytics-to-content-device-summaries``
+and stream output. **NOTE** Will not execute the SousChef's ``load``
+method.
+
+.. code:: bash
+
+    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_device_summaries.yaml option=value1
+
+Alternatively pass in a recipe file
+
+.. code:: bash
+
+    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_device_summaries.yaml --recipe=recipe.yaml
 
 Options
 ^^^^^^^
@@ -164,23 +164,6 @@ Google Analytics Domain Facets For Content Items
    ``newslynx_sc_google_analytics.ContentDomainFacets``.
 -  API Slug: ``google-analytics-to-content-domain-facets``
 
-Development
-^^^^^^^^^^^
-
-Pass runtime options to ``google-analytics-to-content-domain-facets``
-and stream output. **NOTE** Will not execute the SousChef's ``load``
-method.
-
-.. code:: bash
-
-    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_domain_facets.yaml option=value1
-
-Alternatively pass in a recipe file
-
-.. code:: bash
-
-    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_domain_facets.yaml --recipe=recipe.yaml
-
 API Usage
 ^^^^^^^^^
 
@@ -216,6 +199,23 @@ method.
 .. code:: bash
 
     $ newslynx api recipes cook id=<id> --passthrough **options
+
+Development
+^^^^^^^^^^^
+
+Pass runtime options to ``google-analytics-to-content-domain-facets``
+and stream output. **NOTE** Will not execute the SousChef's ``load``
+method.
+
+.. code:: bash
+
+    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_domain_facets.yaml option=value1
+
+Alternatively pass in a recipe file
+
+.. code:: bash
+
+    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_domain_facets.yaml --recipe=recipe.yaml
 
 Options
 ^^^^^^^
@@ -305,22 +305,6 @@ Google Analytics Timeseries For Content Items
    ``newslynx_sc_google_analytics.ContentTimeseries``.
 -  API Slug: ``google-analytics-to-content-timeseries``
 
-Development
-^^^^^^^^^^^
-
-Pass runtime options to ``google-analytics-to-content-timeseries`` and
-stream output. **NOTE** Will not execute the SousChef's ``load`` method.
-
-.. code:: bash
-
-    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_timeseries.yaml option=value1
-
-Alternatively pass in a recipe file
-
-.. code:: bash
-
-    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_timeseries.yaml --recipe=recipe.yaml
-
 API Usage
 ^^^^^^^^^
 
@@ -356,6 +340,22 @@ method.
 .. code:: bash
 
     $ newslynx api recipes cook id=<id> --passthrough **options
+
+Development
+^^^^^^^^^^^
+
+Pass runtime options to ``google-analytics-to-content-timeseries`` and
+stream output. **NOTE** Will not execute the SousChef's ``load`` method.
+
+.. code:: bash
+
+    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_timeseries.yaml option=value1
+
+Alternatively pass in a recipe file
+
+.. code:: bash
+
+    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_timeseries.yaml --recipe=recipe.yaml
 
 Options
 ^^^^^^^
