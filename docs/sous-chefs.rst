@@ -22,7 +22,7 @@ method.
 
     $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_device_summaries.yaml option=value1
 
-Alernatively pass in a recipe file
+Alternatively pass in a recipe file
 
 .. code:: bash
 
@@ -43,7 +43,7 @@ Create a Recipe with this Sous Chef with command line options.
 
     $ newslynx api recipes create sous_chef=google-analytics-to-content-device-summaries **options
 
-Alerternatively pass in a recipe file.
+Alternatively pass in a recipe file.
 
 .. code:: bash
 
@@ -56,7 +56,7 @@ Save the outputted ``id`` of this recipe, and execute it via the API.
 
     $ newslynx api recipes cook id=<id>
 
-Alernatively, run the Recipe, passing in arbitrary runtime options, and
+Alternatively, run the Recipe, passing in arbitrary runtime options, and
 stream it's output: **NOTE** Will not execute the SousChef's ``load``
 method.
 
@@ -175,7 +175,7 @@ method.
 
     $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_domain_facets.yaml option=value1
 
-Alernatively pass in a recipe file
+Alternatively pass in a recipe file
 
 .. code:: bash
 
@@ -196,7 +196,7 @@ Create a Recipe with this Sous Chef with command line options.
 
     $ newslynx api recipes create sous_chef=google-analytics-to-content-domain-facets **options
 
-Alerternatively pass in a recipe file.
+Alternatively pass in a recipe file.
 
 .. code:: bash
 
@@ -209,7 +209,7 @@ Save the outputted ``id`` of this recipe, and execute it via the API.
 
     $ newslynx api recipes cook id=<id>
 
-Alernatively, run the Recipe, passing in arbitrary runtime options, and
+Alternatively, run the Recipe, passing in arbitrary runtime options, and
 stream it's output: **NOTE** Will not execute the SousChef's ``load``
 method.
 
@@ -315,7 +315,7 @@ stream output. **NOTE** Will not execute the SousChef's ``load`` method.
 
     $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_timeseries.yaml option=value1
 
-Alernatively pass in a recipe file
+Alternatively pass in a recipe file
 
 .. code:: bash
 
@@ -336,7 +336,7 @@ Create a Recipe with this Sous Chef with command line options.
 
     $ newslynx api recipes create sous_chef=google-analytics-to-content-timeseries **options
 
-Alerternatively pass in a recipe file.
+Alternatively pass in a recipe file.
 
 .. code:: bash
 
@@ -349,7 +349,7 @@ Save the outputted ``id`` of this recipe, and execute it via the API.
 
     $ newslynx api recipes cook id=<id>
 
-Alernatively, run the Recipe, passing in arbitrary runtime options, and
+Alternatively, run the Recipe, passing in arbitrary runtime options, and
 stream it's output: **NOTE** Will not execute the SousChef's ``load``
 method.
 
