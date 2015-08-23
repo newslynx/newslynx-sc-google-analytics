@@ -73,6 +73,9 @@ following
 
 -  ``days``
 
+   -  The number of days past a content item's creation date after which
+      we will stop computing these counts.
+
    -  Should be rendered with a ``number`` form.
    -  Accepts inputs of type:
 
@@ -81,6 +84,8 @@ following
    -  Defaults to ``30``
 
 -  ``content_item_types``
+
+   -  The content item types to calculate share counts for.
 
    -  Should be rendered with a ``text`` form.
    -  Choose from:
@@ -220,6 +225,9 @@ In addition to default recipe options,
 
 -  ``days``
 
+   -  The number of days past a content item's creation date after which
+      we will stop computing these counts.
+
    -  Should be rendered with a ``number`` form.
    -  Accepts inputs of type:
 
@@ -229,6 +237,8 @@ In addition to default recipe options,
 
 -  ``max_facets``
 
+   -  The maximum number of facets to include. Will sort by pageviews.
+
    -  Should be rendered with a ``number`` form.
    -  Accepts inputs of type:
 
@@ -237,6 +247,8 @@ In addition to default recipe options,
    -  Defaults to ``20``
 
 -  ``content_item_types``
+
+   -  The content item types to calculate share counts for.
 
    -  Should be rendered with a ``text`` form.
    -  Choose from:
@@ -353,6 +365,8 @@ In addition to default recipe options,
 
 -  ``days``
 
+   -  How many days back should we search each day
+
    -  Should be rendered with a ``number`` form.
    -  Accepts inputs of type:
 
@@ -361,6 +375,8 @@ In addition to default recipe options,
    -  Defaults to ``30``
 
 -  ``content_item_types``
+
+   -  The content item types to calculate share counts for.
 
    -  Should be rendered with a ``text`` form.
    -  Choose from:
