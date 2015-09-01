@@ -10,29 +10,13 @@ Production
 ~~~~~~~~~~
 
 To install ``newslynx-sc-google-analytics`` for an active installation
-of ``newslynx-core``, clone it and copy into ``~/.newslynx/sous-chefs``
+of ``newslynx-core``, run the following command:
 
 .. code:: bash
 
-    $ git clone https://github.com/newslynx/newslynx-sc-google-analytics.git
-    $ mv newslynx-sc-google-analytics/ ~/.newslynx/sous-chefs/
+    $ newslynx sc-install https://github.com/newslynx/newslynx-sc-google-analytics.git
 
-Now install it within the same virtual environment as ``newslynx``:
-
-.. code:: bash
-
-    $ cd ~/.newslynx/sous-chefs/newslynx-sc-google-analytics/
-    $ pip install .
-
-... and if you're running ``newslynx`` as ``sudo``
-
-.. code:: bash
-
-    $ cd ~/.newslynx/sous-chefs/newslynx-sc-google-analytics/ 
-    $ sudo pip install .
-
-Finally, run ``newslynx sc-sync`` to ``newslynx-sc-google-analytics``'s
-Sous Chefs for all organizations.
+To add ``newslynx-sc-google-analytics`` all orgnaizations, run:
 
 .. code:: bash
 
@@ -42,14 +26,12 @@ Development
 ~~~~~~~~~~~
 
 If you want to modify / add Sous Chefs to
-``newslynx-sc-google-analytics``, instal it in it's own virtual
-environment.
+``newslynx-sc-google-analytics``, do the following:
 
 **NOTE** Will install a fresh version of ``newslynx`` via ``pip``.
 
 .. code:: bash
 
-    $ mkvirtualenv newslynx-sc-google-analytics
     $ git clone https://github.com/newslynx/newslynx-sc-google-analytics.git
     $ cd newslynx-sc-google-analytics
     $ pip install --editable .
@@ -59,7 +41,7 @@ Chefs in development mode
 
 .. code:: bash
 
-    % newslynx sc newslynx_sc_google_analytics/say_my_name.yaml --myname='Brian Abelson'
+    % newslynx sc-run newslynx_sc_google_analytics/say_my_name.yaml --myname='Brian Abelson'
 
 Tests
 -----

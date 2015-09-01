@@ -11,31 +11,57 @@ Google Analytics Pageviews by Device Type for content Items
    ``newslynx_sc_google_analytics.ContentDeviceSummaries``.
 -  API Slug: ``google-analytics-to-content-device-summaries``
 
-API Usage
-^^^^^^^^^
+Usage
+^^^^^
+
+Standalone
+''''''''''
+
+Run this Sous Chef via the api, passing in arbitrary runtime options,
+and stream it's output.
+
+.. code:: shell
+
+    $ newslynx api sous-chefs cook -d=newslynx_sc_google_analytics/google_analytics_to_content_device_summaries.yaml --passthrough **options
+
+Run this Sous Chef via the api, and if applicable, send it's output to
+bulkload.
+
+.. code:: shell
+
+    $ newslynx api sous-chefs cook -d=newslynx_sc_google_analytics/google_analytics_to_content_device_summaries.yaml **options
+
+Do either of the above two, but pass in a recipe file
+
+.. code:: shell
+
+    $ newslynx api sous-chefs cook -d=recipe.yaml
+
+Recipes
+'''''''
 
 Add this Sous Chef to your authenticated org
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api sous-chefs create -d=newslynx_sc_google_analytics/google_analytics_to_content_device_summaries.yaml
 
 Create a Recipe with this Sous Chef with command line options.
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api recipes create sous_chef=google-analytics-to-content-device-summaries **options
 
 Alternatively pass in a recipe file.
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api recipes create sous_chef=google-analytics-to-content-device-summaries --data=recipe.yaml
 
 Save the outputted ``id`` of this recipe, and execute it via the API.
 **NOTE** This will place the recipe in a task queue.
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api recipes cook id=<id>
 
@@ -43,26 +69,26 @@ Alternatively, run the Recipe, passing in arbitrary runtime options, and
 stream it's output: **NOTE** Will not execute the SousChef's ``load``
 method.
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api recipes cook id=<id> --passthrough **options
 
 Development
-^^^^^^^^^^^
+'''''''''''
 
 Pass runtime options to ``google-analytics-to-content-device-summaries``
 and stream output. **NOTE** Will not execute the SousChef's ``load``
 method.
 
-.. code:: bash
+.. code:: shell
 
-    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_device_summaries.yaml option=value1
+    $ newslynx sc-run newslynx_sc_google_analytics/google_analytics_to_content_device_summaries.yaml option=value1
 
 Alternatively pass in a recipe file
 
-.. code:: bash
+.. code:: shell
 
-    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_device_summaries.yaml --recipe=recipe.yaml
+    $ newslynx sc-run newslynx_sc_google_analytics/google_analytics_to_content_device_summaries.yaml --recipe=recipe.yaml
 
 Options
 ^^^^^^^
@@ -164,31 +190,57 @@ Google Analytics Domain Facets For Content Items
    ``newslynx_sc_google_analytics.ContentDomainFacets``.
 -  API Slug: ``google-analytics-to-content-domain-facets``
 
-API Usage
-^^^^^^^^^
+Usage
+^^^^^
+
+Standalone
+''''''''''
+
+Run this Sous Chef via the api, passing in arbitrary runtime options,
+and stream it's output.
+
+.. code:: shell
+
+    $ newslynx api sous-chefs cook -d=newslynx_sc_google_analytics/google_analytics_to_content_domain_facets.yaml --passthrough **options
+
+Run this Sous Chef via the api, and if applicable, send it's output to
+bulkload.
+
+.. code:: shell
+
+    $ newslynx api sous-chefs cook -d=newslynx_sc_google_analytics/google_analytics_to_content_domain_facets.yaml **options
+
+Do either of the above two, but pass in a recipe file
+
+.. code:: shell
+
+    $ newslynx api sous-chefs cook -d=recipe.yaml
+
+Recipes
+'''''''
 
 Add this Sous Chef to your authenticated org
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api sous-chefs create -d=newslynx_sc_google_analytics/google_analytics_to_content_domain_facets.yaml
 
 Create a Recipe with this Sous Chef with command line options.
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api recipes create sous_chef=google-analytics-to-content-domain-facets **options
 
 Alternatively pass in a recipe file.
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api recipes create sous_chef=google-analytics-to-content-domain-facets --data=recipe.yaml
 
 Save the outputted ``id`` of this recipe, and execute it via the API.
 **NOTE** This will place the recipe in a task queue.
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api recipes cook id=<id>
 
@@ -196,26 +248,26 @@ Alternatively, run the Recipe, passing in arbitrary runtime options, and
 stream it's output: **NOTE** Will not execute the SousChef's ``load``
 method.
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api recipes cook id=<id> --passthrough **options
 
 Development
-^^^^^^^^^^^
+'''''''''''
 
 Pass runtime options to ``google-analytics-to-content-domain-facets``
 and stream output. **NOTE** Will not execute the SousChef's ``load``
 method.
 
-.. code:: bash
+.. code:: shell
 
-    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_domain_facets.yaml option=value1
+    $ newslynx sc-run newslynx_sc_google_analytics/google_analytics_to_content_domain_facets.yaml option=value1
 
 Alternatively pass in a recipe file
 
-.. code:: bash
+.. code:: shell
 
-    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_domain_facets.yaml --recipe=recipe.yaml
+    $ newslynx sc-run newslynx_sc_google_analytics/google_analytics_to_content_domain_facets.yaml --recipe=recipe.yaml
 
 Options
 ^^^^^^^
@@ -305,31 +357,57 @@ Google Analytics Timeseries For Content Items
    ``newslynx_sc_google_analytics.ContentTimeseries``.
 -  API Slug: ``google-analytics-to-content-timeseries``
 
-API Usage
-^^^^^^^^^
+Usage
+^^^^^
+
+Standalone
+''''''''''
+
+Run this Sous Chef via the api, passing in arbitrary runtime options,
+and stream it's output.
+
+.. code:: shell
+
+    $ newslynx api sous-chefs cook -d=newslynx_sc_google_analytics/google_analytics_to_content_timeseries.yaml --passthrough **options
+
+Run this Sous Chef via the api, and if applicable, send it's output to
+bulkload.
+
+.. code:: shell
+
+    $ newslynx api sous-chefs cook -d=newslynx_sc_google_analytics/google_analytics_to_content_timeseries.yaml **options
+
+Do either of the above two, but pass in a recipe file
+
+.. code:: shell
+
+    $ newslynx api sous-chefs cook -d=recipe.yaml
+
+Recipes
+'''''''
 
 Add this Sous Chef to your authenticated org
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api sous-chefs create -d=newslynx_sc_google_analytics/google_analytics_to_content_timeseries.yaml
 
 Create a Recipe with this Sous Chef with command line options.
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api recipes create sous_chef=google-analytics-to-content-timeseries **options
 
 Alternatively pass in a recipe file.
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api recipes create sous_chef=google-analytics-to-content-timeseries --data=recipe.yaml
 
 Save the outputted ``id`` of this recipe, and execute it via the API.
 **NOTE** This will place the recipe in a task queue.
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api recipes cook id=<id>
 
@@ -337,25 +415,25 @@ Alternatively, run the Recipe, passing in arbitrary runtime options, and
 stream it's output: **NOTE** Will not execute the SousChef's ``load``
 method.
 
-.. code:: bash
+.. code:: shell
 
     $ newslynx api recipes cook id=<id> --passthrough **options
 
 Development
-^^^^^^^^^^^
+'''''''''''
 
 Pass runtime options to ``google-analytics-to-content-timeseries`` and
 stream output. **NOTE** Will not execute the SousChef's ``load`` method.
 
-.. code:: bash
+.. code:: shell
 
-    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_timeseries.yaml option=value1
+    $ newslynx sc-run newslynx_sc_google_analytics/google_analytics_to_content_timeseries.yaml option=value1
 
 Alternatively pass in a recipe file
 
-.. code:: bash
+.. code:: shell
 
-    $ newslynx sc newslynx_sc_google_analytics/google_analytics_to_content_timeseries.yaml --recipe=recipe.yaml
+    $ newslynx sc-run newslynx_sc_google_analytics/google_analytics_to_content_timeseries.yaml --recipe=recipe.yaml
 
 Options
 ^^^^^^^
