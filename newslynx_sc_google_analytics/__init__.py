@@ -56,7 +56,7 @@ class SCGoogleAnalytics(SousChef):
                     if not p['property'] == prop.url:
                         continue
                     for prof in prop.profiles:
-                        log.info('Fetching data for {}'.format(p['profile']))
+                        self.log.info('Fetching data for {}'.format(p['profile']))
                         if not prof.name == p['profile']:
                             continue
                         if prof not in self.profiles:
