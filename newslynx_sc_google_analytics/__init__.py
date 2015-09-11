@@ -36,6 +36,7 @@ class SCGoogleAnalytics(SousChef):
                 'You must specify a list of google analytics properties to track. '
                 'Try re-authenticating.')
 
+        # print "TOKENS", tokens
         # authenticate with accounts
         conn_kw = {
             'refresh_token': tokens.get('refresh_token', None),
@@ -55,7 +56,7 @@ class SCGoogleAnalytics(SousChef):
                     if not p['property'] == prop.url:
                         continue
                     for prof in prop.profiles:
-                        print prof.name, p['profile']
+                        log.info('Fetching data for {}'.format(p['profile']))
                         if not prof.name == p['profile']:
                             continue
                         if prof not in self.profiles:
@@ -214,13 +215,14 @@ class ContentTimeseries(SCGoogleAnalytics):
                 new_row[k] = v
         return new_row
 
-    def format_date(self, ds, tz=None):
+    def format_date(self, dt, tz=None):
         """
         Convert datehour to utc based on the profile's timezone
         """
         if not tz:
             tz = pytz.utc
-        dt = datetime.strptime(ds, '%Y%m%d%H')
+        if not isinstance(dt, datetime):
+            dt = datetime.strptime(dt, '%Y%m%d%H')
         dt = dt.replace(tzinfo=tz)
         dt = dates.convert_to_utc(dt)
 
