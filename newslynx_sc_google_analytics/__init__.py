@@ -183,7 +183,9 @@ class ContentTimeseries(SCGoogleAnalytics):
         start = (dates.now() - timedelta(days=days)).date().isoformat()
         i = 1
         while 1:
-            q = prof.core.query.metrics(self.METRICS.keys(), self.DIMENSIONS.keys())\
+            q = prof.core.query
+                         .set(metrics=self.METRICS.keys())\
+                         .set(dimensions=self.DIMENSIONS.keys())\
                          .range(start, days=days)\
                          .sort(*self.SORT_KEYS)\
                          .limit(i, i+1000)
@@ -336,7 +338,9 @@ class ContentDomainFacets(SCGoogleAnalytics):
         start = (dates.now() - timedelta(days=days)).date().isoformat()
         i = 1
         while 1:
-            q = prof.core.query.metrics(self.METRICS.keys(), self.DIMENSIONS.keys())\
+            q = prof.core.query
+                         .set(metrics=self.METRICS.keys())\
+                         .set(dimensions=self.DIMENSIONS.keys())\
                          .range(start, days=days)\
                          .limit(i, i+1000)
             self.log.info('Running query:\n\t{}\n\tat limit {}'.format(q.raw, i))
@@ -427,7 +431,9 @@ class ContentDeviceSummaries(SCGoogleAnalytics):
         start = (dates.now() - timedelta(days=days)).date().isoformat()
         i = 1
         while 1:
-            q = prof.core.query.metrics(self.METRICS.keys(), self.DIMENSIONS.keys())\
+            q = prof.core.query
+                         .set(metrics=self.METRICS.keys())\
+                         .set(dimensions=self.DIMENSIONS.keys())\
                          .range(start, days=days)\
                          .limit(i, i+1000)
             self.log.info('Running query:\n\t{}\n\tat limit {}'.format(q.raw, i))
