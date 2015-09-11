@@ -104,7 +104,7 @@ class SCGoogleAnalytics(SousChef):
 
     def prepend_ga_str(list):
         for val in list:
-            val = 'ga:' + 
+            val = 'ga:' + val
         return val
 
     def reconcile_urls(self, row, prof):
