@@ -178,16 +178,12 @@ class ContentTimeseries(SCGoogleAnalytics):
         '-pagePath'
     ]
 
-    def prepend_ga_str(list):
-        for val in list:
-            val = 'ga:' + val
-        return val
-
     def fetch(self, prof):
         days = self.options.get('days', 5)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
-        ga_metric_names = prepend_ga_str(self.METRICS.keys())
-        ga_dimension_names = prepend_ga_str(self.DIMENSIONS.keys())
+        prepend_ga_str = lambda item: 'ga:{}'.format(item)
+        ga_dimension_names = map(prepend_ga_str, self.METRICS.keys())
+        ga_metric_names = map(prepend_ga_str, self.DIMENSIONS.keys())
         i = 1
         while 1:
             q = prof.core.query\
@@ -340,16 +336,12 @@ class ContentDomainFacets(SCGoogleAnalytics):
 
         return row
 
-    def prepend_ga_str(list):
-        for val in list:
-            val = 'ga:' + val
-        return val
-
     def fetch(self, prof):
         days = self.options.get('days', 30)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
-        ga_metric_names = prepend_ga_str(self.METRICS.keys())
-        ga_dimension_names = prepend_ga_str(self.DIMENSIONS.keys())
+        prepend_ga_str = lambda item: 'ga:{}'.format(item)
+        ga_dimension_names = map(prepend_ga_str, self.METRICS.keys())
+        ga_metric_names = map(prepend_ga_str, self.DIMENSIONS.keys())
         i = 1
         while 1:
             q = prof.core.query\
@@ -440,16 +432,12 @@ class ContentDeviceSummaries(SCGoogleAnalytics):
         'deviceCategory': 'device'
     }
 
-    def prepend_ga_str(list):
-        for val in list:
-            val = 'ga:' + val
-        return val
-
     def fetch(self, prof):
         days = self.options.get('days', 30)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
-        ga_metric_names = prepend_ga_str(self.METRICS.keys())
-        ga_dimension_names = prepend_ga_str(self.DIMENSIONS.keys())
+        prepend_ga_str = lambda item: 'ga:{}'.format(item)
+        ga_dimension_names = map(prepend_ga_str, self.METRICS.keys())
+        ga_metric_names = map(prepend_ga_str, self.DIMENSIONS.keys())
         i = 1
         while 1:
             q = prof.core.query\
