@@ -183,7 +183,7 @@ class ContentTimeseries(SCGoogleAnalytics):
         start = (dates.now() - timedelta(days=days)).date().isoformat()
         i = 1
         while 1:
-            q = prof.core.query
+            q = prof.core.query\
                          .set(metrics=self.METRICS.keys())\
                          .set(dimensions=self.DIMENSIONS.keys())\
                          .range(start, days=days)\
@@ -338,7 +338,7 @@ class ContentDomainFacets(SCGoogleAnalytics):
         start = (dates.now() - timedelta(days=days)).date().isoformat()
         i = 1
         while 1:
-            q = prof.core.query
+            q = prof.core.query\
                          .set(metrics=self.METRICS.keys())\
                          .set(dimensions=self.DIMENSIONS.keys())\
                          .range(start, days=days)\
@@ -431,7 +431,7 @@ class ContentDeviceSummaries(SCGoogleAnalytics):
         start = (dates.now() - timedelta(days=days)).date().isoformat()
         i = 1
         while 1:
-            q = prof.core.query
+            q = prof.core.query\
                          .set(metrics=self.METRICS.keys())\
                          .set(dimensions=self.DIMENSIONS.keys())\
                          .range(start, days=days)\
