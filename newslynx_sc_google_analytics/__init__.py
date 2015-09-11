@@ -102,6 +102,11 @@ class SCGoogleAnalytics(SousChef):
             elif u:
                 self.url_lookup[u].append(c['id'])
 
+    def prepend_ga_str(list):
+        for val in list:
+            val = 'ga:' + 
+        return val
+
     def reconcile_urls(self, row, prof):
         """
         This is where the ugly, ugly magic happens.
@@ -181,11 +186,13 @@ class ContentTimeseries(SCGoogleAnalytics):
     def fetch(self, prof):
         days = self.options.get('days', 5)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
+        ga_metric_names = prepend_ga_str(self.METRICS.keys())
+        ga_dimension_names = prepend_ga_str(self.DIMENSIONS.keys())
         i = 1
         while 1:
             q = prof.core.query\
-                         .set(metrics=self.METRICS.keys())\
-                         .set(dimensions=self.DIMENSIONS.keys())\
+                         .set(metrics=ga_metric_names)\
+                         .set(dimensions=ga_dimension_names)\
                          .range(start, days=days)\
                          .sort(*self.SORT_KEYS)\
                          .limit(i, i+1000)
@@ -336,11 +343,13 @@ class ContentDomainFacets(SCGoogleAnalytics):
     def fetch(self, prof):
         days = self.options.get('days', 30)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
+        ga_metric_names = prepend_ga_str(self.METRICS.keys())
+        ga_dimension_names = prepend_ga_str(self.DIMENSIONS.keys())
         i = 1
         while 1:
             q = prof.core.query\
-                         .set(metrics=self.METRICS.keys())\
-                         .set(dimensions=self.DIMENSIONS.keys())\
+                         .set(metrics=ga_metric_names)\
+                         .set(dimensions=ga_dimension_names)\
                          .range(start, days=days)\
                          .limit(i, i+1000)
             self.log.info('Running query:\n\t{}\n\tat limit {}'.format(q.raw, i))
@@ -429,11 +438,13 @@ class ContentDeviceSummaries(SCGoogleAnalytics):
     def fetch(self, prof):
         days = self.options.get('days', 30)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
+        ga_metric_names = prepend_ga_str(self.METRICS.keys())
+        ga_dimension_names = prepend_ga_str(self.DIMENSIONS.keys())
         i = 1
         while 1:
             q = prof.core.query\
-                         .set(metrics=self.METRICS.keys())\
-                         .set(dimensions=self.DIMENSIONS.keys())\
+                         .set(metrics=ga_metric_names)\
+                         .set(dimensions=ga_dimension_names)\
                          .range(start, days=days)\
                          .limit(i, i+1000)
             self.log.info('Running query:\n\t{}\n\tat limit {}'.format(q.raw, i))
