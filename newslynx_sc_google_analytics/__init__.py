@@ -503,5 +503,6 @@ class ContentDeviceSummaries(SCGoogleAnalytics):
 
     def load(self, data):
         d = list(data)
+        print d
         status_resp = self.api.content.bulk_create_summary(data=d)
         return self.api.jobs.poll(**status_resp)
