@@ -102,11 +102,6 @@ class SCGoogleAnalytics(SousChef):
             elif u:
                 self.url_lookup[u].append(c['id'])
 
-    def prepend_ga_str(list):
-        for val in list:
-            val = 'ga:' + val
-        return val
-
     def reconcile_urls(self, row, prof):
         """
         This is where the ugly, ugly magic happens.
@@ -182,6 +177,11 @@ class ContentTimeseries(SCGoogleAnalytics):
         '-dateHour',
         '-pagePath'
     ]
+
+    def prepend_ga_str(list):
+        for val in list:
+            val = 'ga:' + val
+        return val
 
     def fetch(self, prof):
         days = self.options.get('days', 5)
@@ -340,6 +340,11 @@ class ContentDomainFacets(SCGoogleAnalytics):
 
         return row
 
+    def prepend_ga_str(list):
+        for val in list:
+            val = 'ga:' + val
+        return val
+
     def fetch(self, prof):
         days = self.options.get('days', 30)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
@@ -434,6 +439,11 @@ class ContentDeviceSummaries(SCGoogleAnalytics):
         'pagePath': 'path',
         'deviceCategory': 'device'
     }
+
+    def prepend_ga_str(list):
+        for val in list:
+            val = 'ga:' + val
+        return val
 
     def fetch(self, prof):
         days = self.options.get('days', 30)
