@@ -501,8 +501,7 @@ class ContentDeviceSummaries(SCGoogleAnalytics):
 
             yield row
 
-    def load(self, data):
-        d = list(data)
-        print d
+    def load(self, in_data):
+        d = list(in_data)
         status_resp = self.api.content.bulk_create_summary(data=d)
         return self.api.jobs.poll(**status_resp)
