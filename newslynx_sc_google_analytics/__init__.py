@@ -162,16 +162,16 @@ class SCGoogleAnalytics(SousChef):
 class ContentTimeseries(SCGoogleAnalytics):
 
     METRICS = {
-        'pageviews': 'ga_pageviews',
-        'timeOnPage': 'ga_total_time_on_page',
-        'exits': 'ga_exits',
-        'entrances': 'ga_entrances'
+        'ga:pageviews': 'ga_pageviews',
+        'ga:timeOnPage': 'ga_total_time_on_page',
+        'ga:exits': 'ga_exits',
+        'ga:entrances': 'ga_entrances'
     }
 
     DIMENSIONS = {
-        'hostname': 'domain',
-        'pagePath': 'path',
-        'dateHour': 'datetime'
+        'ga:hostname': 'domain',
+        'ga:pagePath': 'path',
+        'ga:dateHour': 'datetime'
     }
 
     SORT_KEYS = [
@@ -182,14 +182,11 @@ class ContentTimeseries(SCGoogleAnalytics):
     def fetch(self, prof):
         days = self.options.get('days', 5)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
-        prepend_ga_str = lambda item: 'ga:{}'.format(item)
-        ga_metric_names = map(prepend_ga_str, self.METRICS.keys())
-        ga_dimension_names = map(prepend_ga_str, self.DIMENSIONS.keys())
         i = 1
         while 1:
             q = prof.core.query\
-                         .set(metrics=ga_metric_names)\
-                         .set(dimensions=ga_dimension_names)\
+                         .set(metrics=self.METRICS.keys())\
+                         .set(dimensions=self.DIMENSIONS.keys())\
                          .range(start, days=days)\
                          .sort(*self.SORT_KEYS)\
                          .limit(i, i+1000)
@@ -289,13 +286,13 @@ class ContentTimeseries(SCGoogleAnalytics):
 class ContentDomainFacets(SCGoogleAnalytics):
 
     METRICS = {
-        'pageviews': 'pageviews',
+        'ga:pageviews': 'pageviews',
     }
 
     DIMENSIONS = {
-        'hostname': 'domain',
-        'pagePath': 'path',
-        'fullReferrer': 'referrer'
+        'ga:hostname': 'domain',
+        'ga:pagePath': 'path',
+        'ga:fullReferrer': 'referrer'
     }
 
     SEARCH_REFERRERS = [
@@ -340,14 +337,11 @@ class ContentDomainFacets(SCGoogleAnalytics):
     def fetch(self, prof):
         days = self.options.get('days', 30)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
-        prepend_ga_str = lambda item: 'ga:{}'.format(item)
-        ga_metric_names = map(prepend_ga_str, self.METRICS.keys())
-        ga_dimension_names = map(prepend_ga_str, self.DIMENSIONS.keys())
         i = 1
         while 1:
             q = prof.core.query\
-                         .set(metrics=ga_metric_names)\
-                         .set(dimensions=ga_dimension_names)\
+                         .set(metrics=self.METRICS.keys())\
+                         .set(dimensions=self.DIMENSIONS.keys())\
                          .range(start, days=days)\
                          .limit(i, i+1000)
             self.log.info('Running query:\n\t{}\n\tat limit {}'.format(q.raw, i))
@@ -424,26 +418,23 @@ class ContentDomainFacets(SCGoogleAnalytics):
 class ContentDeviceSummaries(SCGoogleAnalytics):
 
     METRICS = {
-        'pageviews': 'pageviews'
+        'ga:pageviews': 'pageviews'
     }
 
     DIMENSIONS = {
-        'hostname': 'domain',
-        'pagePath': 'path',
-        'deviceCategory': 'device'
+        'ga:hostname': 'domain',
+        'ga:pagePath': 'path',
+        'ga:deviceCategory': 'device'
     }
 
     def fetch(self, prof):
         days = self.options.get('days', 30)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
-        prepend_ga_str = lambda item: 'ga:{}'.format(item)
-        ga_metric_names = map(prepend_ga_str, self.METRICS.keys())
-        ga_dimension_names = map(prepend_ga_str, self.DIMENSIONS.keys())
         i = 1
         while 1:
             q = prof.core.query\
-                         .set(metrics=ga_metric_names)\
-                         .set(dimensions=ga_dimension_names)\
+                         .set(metrics=self.METRICS.keys())\
+                         .set(dimensions=self.DIMENSIONS.keys())\
                          .range(start, days=days)\
                          .limit(i, i+1000)
             self.log.info('Running query:\n\t{}\n\tat limit {}'.format(q.raw, i))
@@ -501,7 +492,7 @@ class ContentDeviceSummaries(SCGoogleAnalytics):
 
             yield row
 
-    def load(self, in_data):
-        d = list(in_data)
+    def load(self, data):
+        d = list(data)
         status_resp = self.api.content.bulk_create_summary(data=d)
         return self.api.jobs.poll(**status_resp)
