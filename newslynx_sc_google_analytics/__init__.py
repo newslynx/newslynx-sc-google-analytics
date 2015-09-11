@@ -162,16 +162,16 @@ class SCGoogleAnalytics(SousChef):
 class ContentTimeseries(SCGoogleAnalytics):
 
     METRICS = {
-        'ga:pageviews': 'ga_pageviews',
-        'ga:timeOnPage': 'ga_total_time_on_page',
-        'ga:exits': 'ga_exits',
-        'ga:entrances': 'ga_entrances'
+        'pageviews': 'ga_pageviews',
+        'timeOnPage': 'ga_total_time_on_page',
+        'exits': 'ga_exits',
+        'entrances': 'ga_entrances'
     }
 
     DIMENSIONS = {
-        'ga:hostname': 'domain',
-        'ga:pagePath': 'path',
-        'ga:dateHour': 'datetime'
+        'hostname': 'domain',
+        'pagePath': 'path',
+        'dateHour': 'datetime'
     }
 
     SORT_KEYS = [
@@ -182,11 +182,14 @@ class ContentTimeseries(SCGoogleAnalytics):
     def fetch(self, prof):
         days = self.options.get('days', 5)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
+        prepend_ga_str = lambda item: 'ga:{}'.format(item)
+        ga_metric_names = map(prepend_ga_str, self.METRICS.keys())
+        ga_dimension_names = map(prepend_ga_str, self.DIMENSIONS.keys())
         i = 1
         while 1:
             q = prof.core.query\
-                         .set(metrics=self.METRICS.keys())\
-                         .set(dimensions=self.DIMENSIONS.keys())\
+                         .set(metrics=ga_metric_names)\
+                         .set(dimensions=ga_dimension_names)\
                          .range(start, days=days)\
                          .sort(*self.SORT_KEYS)\
                          .limit(i, i+1000)
@@ -286,13 +289,13 @@ class ContentTimeseries(SCGoogleAnalytics):
 class ContentDomainFacets(SCGoogleAnalytics):
 
     METRICS = {
-        'ga:pageviews': 'pageviews',
+        'pageviews': 'pageviews',
     }
 
     DIMENSIONS = {
-        'ga:hostname': 'domain',
-        'ga:pagePath': 'path',
-        'ga:fullReferrer': 'referrer'
+        'hostname': 'domain',
+        'pagePath': 'path',
+        'fullReferrer': 'referrer'
     }
 
     SEARCH_REFERRERS = [
@@ -337,11 +340,14 @@ class ContentDomainFacets(SCGoogleAnalytics):
     def fetch(self, prof):
         days = self.options.get('days', 30)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
+        prepend_ga_str = lambda item: 'ga:{}'.format(item)
+        ga_metric_names = map(prepend_ga_str, self.METRICS.keys())
+        ga_dimension_names = map(prepend_ga_str, self.DIMENSIONS.keys())
         i = 1
         while 1:
             q = prof.core.query\
-                         .set(metrics=self.METRICS.keys())\
-                         .set(dimensions=self.DIMENSIONS.keys())\
+                         .set(metrics=ga_metric_names)\
+                         .set(dimensions=ga_dimension_names)\
                          .range(start, days=days)\
                          .limit(i, i+1000)
             self.log.info('Running query:\n\t{}\n\tat limit {}'.format(q.raw, i))
@@ -418,23 +424,26 @@ class ContentDomainFacets(SCGoogleAnalytics):
 class ContentDeviceSummaries(SCGoogleAnalytics):
 
     METRICS = {
-        'ga:pageviews': 'pageviews'
+        'pageviews': 'pageviews'
     }
 
     DIMENSIONS = {
-        'ga:hostname': 'domain',
-        'ga:pagePath': 'path',
-        'ga:deviceCategory': 'device'
+        'hostname': 'domain',
+        'pagePath': 'path',
+        'deviceCategory': 'device'
     }
 
     def fetch(self, prof):
         days = self.options.get('days', 30)
         start = (dates.now() - timedelta(days=days)).date().isoformat()
+        prepend_ga_str = lambda item: 'ga:{}'.format(item)
+        ga_metric_names = map(prepend_ga_str, self.METRICS.keys())
+        ga_dimension_names = map(prepend_ga_str, self.DIMENSIONS.keys())
         i = 1
         while 1:
             q = prof.core.query\
-                         .set(metrics=self.METRICS.keys())\
-                         .set(dimensions=self.DIMENSIONS.keys())\
+                         .set(metrics=ga_metric_names)\
+                         .set(dimensions=ga_dimension_names)\
                          .range(start, days=days)\
                          .limit(i, i+1000)
             self.log.info('Running query:\n\t{}\n\tat limit {}'.format(q.raw, i))
