@@ -36,7 +36,6 @@ class SCGoogleAnalytics(SousChef):
                 'You must specify a list of google analytics properties to track. '
                 'Try re-authenticating.')
 
-        # print "TOKENS", tokens
         # authenticate with accounts
         conn_kw = {
             'refresh_token': tokens.get('refresh_token', None),
@@ -101,8 +100,7 @@ class SCGoogleAnalytics(SousChef):
                     continue
                 # build up list of ids.
                 self.domain_lookup[domain][p].append(c['id'])
-            elif u:
-                self.url_lookup[u].append(c['id'])
+            self.url_lookup[u].append(c['id'])
 
     def reconcile_urls(self, row, prof):
         """
@@ -110,6 +108,8 @@ class SCGoogleAnalytics(SousChef):
         """
         domain = row.pop('domain', None)
         path = row.pop('path', None)
+        if path != '/' and path.endswith('/'):
+            path = path[:-1]
         prof_url = prof.raw.get('websiteUrl', None)
 
         # get the canonical domain:
@@ -311,6 +311,8 @@ class ContentDomainFacets(SCGoogleAnalytics):
         Parse a referrer.
         """
         referrer = row.get('referrer')
+        if not referrer:
+            return row
 
         if referrer == "(not set)":
             row['referrer'] = 'null'
@@ -357,7 +359,6 @@ class ContentDomainFacets(SCGoogleAnalytics):
             r = q.execute()
             # pause in between queries.
             time.sleep(5)
-
             if not len(r.rows):
                 break
             for row in r.rows:
@@ -390,7 +391,7 @@ class ContentDomainFacets(SCGoogleAnalytics):
                 yield r
 
     def format(self, data, prof):
-
+        data = list(data)
         # build up facets.
         facets = defaultdict(lambda: defaultdict(lambda: defaultdict(float)))
         for row in self.pre_format(data, prof):
@@ -451,6 +452,7 @@ class ContentDeviceSummaries(SCGoogleAnalytics):
             self.log.info('Running query:\n\t{}\n\tat limit {}'.format(q.raw, i))
             i += 1000
             r = q.execute()
+
             if not len(r.rows):
                 break
             for row in r.rows:
