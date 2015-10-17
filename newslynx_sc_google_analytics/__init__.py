@@ -21,7 +21,7 @@ from newslynx.lib import stats
 
 class SCGoogleAnalytics(SousChef):
 
-    timeout = 1800
+    timeout = 3600 * 6 # Six hours
 
     def connect(self):
         self.profiles = []
